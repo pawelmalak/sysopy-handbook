@@ -1,4 +1,4 @@
-import { displayBookmarked } from './displayBookmarks';
+import { displayBookmarked } from './displayBookmarked';
 
 export const unbookmarkQuestion = (questionHash) => {
 

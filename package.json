@@ -18,7 +18,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "marked": "^1.0.0",
-    "md5": "^2.2.1"
+    "md5": "^2.2.1",
+    "showdown": "^1.9.1"
   }
 }

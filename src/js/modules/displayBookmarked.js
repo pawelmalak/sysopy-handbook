@@ -9,7 +9,10 @@ export const displayBookmarked = () => {
     bookmarsContainer.innerHTML = '';
     JSON.parse(localStorage.getItem('bookmarkedQuestions')).hashes.forEach((questionHash) => {
       const questionCard = document.querySelector(`.question-card[data-hash="${questionHash}"]`);
-      bookmarsContainer.innerHTML += `<a href="#${questionCard.getAttribute('id')}" class="list-group-item list-group-item-action">${questionCard.querySelector('.card-title').textContent}</a>`;
+      let questionTitle = questionCard.querySelector('.card-title').textContent.trim().slice(0, 40);
+      questionTitle += '...';
+
+      bookmarsContainer.innerHTML += `<a href="#${questionCard.getAttribute('id')}" class="list-group-item list-group-item-action">${questionTitle}</a>`;
     })
   }
 

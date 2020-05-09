@@ -1,5 +1,5 @@
 import { isBookmarked } from './isBookmarked';
-import { displayBookmarked } from './displayBookmarks';
+import { displayBookmarked } from './displayBookmarked';
 
 export const bookmarkQuestion = (questionHash) => {
 

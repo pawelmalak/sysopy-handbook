@@ -1,5 +1,4 @@
 import { isBookmarked } from './isBookmarked';
-import { displayBookmarked } from './displayBookmarks';
 import { delegateClickEvent } from './delegateClickEvent';
 import md5 from 'md5';
 
@@ -7,6 +6,11 @@ export const populateQuestions = (questionsArray) => {
 
   const questionsContainer = document.querySelector('#questions-container');
   questionsContainer.innerHTML = '';
+
+  if (questionsArray.length == 0) {
+    questionsContainer.innerHTML = `<p class="card-text text-muted">Brak wyników dla tego wyszukania</p>`;
+    return;
+  }
 
   questionsArray.forEach((question, index) => {
 
@@ -31,7 +35,5 @@ export const populateQuestions = (questionsArray) => {
   document.querySelectorAll('.question-card .icon-perf').forEach((card) => {
     card.addEventListener('click', (e) => delegateClickEvent(e));
   });
-
-  displayBookmarked();
 
 }

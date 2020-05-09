@@ -2,6 +2,8 @@ import marked from 'marked';
 
 import { getData } from './modules/getData';
 import { populateQuestions } from './modules/populateQuestions';
+import { searchQuestion } from './modules/searchQuestion';
+import { displayBookmarked } from './modules/displayBookmarked';
 
 // document.getElementById('content').innerHTML += marked("# Browser JavaScript");
 // document.getElementById('content').innerHTML += marked("```javascript");
@@ -12,5 +14,7 @@ import { populateQuestions } from './modules/populateQuestions';
 
   const questions = await getData();
   populateQuestions(questions);
-  
+  displayBookmarked();
+  searchQuestion(questions);
+
 })();
