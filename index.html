@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="dist/bundle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <title>Document</title>
   </head>
   <body>
@@ -38,65 +39,38 @@
       <div class="row pt-5">
         <div class="col-4">
           <h4>Filters</h4>
-          <div class="card">
+          <div class="card" id="card-filters">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <span class="badge badge-primary">Primary</span>
-              <span class="badge badge-secondary">Secondary</span>
-              <span class="badge badge-success">Success</span>
-              <span class="badge badge-danger">Danger</span>
-              <span class="badge badge-warning">Warning</span>
-              <span class="badge badge-info">Info</span>
-              <span class="badge badge-light">Light</span>
-              <span class="badge badge-dark">Dark</span>
+              <h5 class="card-title">Exclude from search</h5>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="411" id="exclude-check-411">
+                <label class="form-check-label" for="exclude-check-411">4.1.1</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="412" id="exclude-check-412">
+                <label class="form-check-label" for="exclude-check-412">4.1.2</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="414" id="exclude-check-414">
+                <label class="form-check-label" for="exclude-check-414">4.1.4</label>
+              </div>
             </div>
           </div>
           <h4 class="mt-5">Bookmarks</h4>
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <span class="badge badge-primary">Primary</span>
-              <span class="badge badge-secondary">Secondary</span>
-              <span class="badge badge-success">Success</span>
-              <span class="badge badge-danger">Danger</span>
-              <span class="badge badge-warning">Warning</span>
-              <span class="badge badge-info">Info</span>
-              <span class="badge badge-light">Light</span>
-              <span class="badge badge-dark">Dark</span>
+              <p class="card-text text-muted">None</p>
             </div>
           </div>
         </div>
         <div class="col-8">
           <h4>Questions</h4>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <span class="badge badge-primary">Primary</span>
-              <span class="badge badge-secondary">Secondary</span>
-              <span class="badge badge-success">Success</span>
-              <span class="badge badge-danger">Danger</span>
-              <span class="badge badge-warning">Warning</span>
-              <span class="badge badge-info">Info</span>
-              <span class="badge badge-light">Light</span>
-              <span class="badge badge-dark">Dark</span>
-            </div>
-          </div>
+          <div id="questions-container"></div>
         </div>
       </div>
     </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
     <script src="dist/bundle.js"></script>
   </body>
 </html>

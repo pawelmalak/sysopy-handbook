@@ -7,4 +7,5 @@ function bundleCss() {
   .pipe(gulp.dest('dist'));
 }
 
-exports.default = series(bundleCss);
+// exports.default = series(bundleCss);
+exports.default = bundleCss;
