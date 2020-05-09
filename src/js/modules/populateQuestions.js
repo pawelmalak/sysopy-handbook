@@ -1,22 +1,24 @@
-import { getData } from './getData';
-import { bookmarkQuestion } from './bookmarkQuestion';
+import { isBookmarked } from './isBookmarked';
+import { displayBookmarked } from './displayBookmarks';
+import { delegateClickEvent } from './delegateClickEvent';
 import md5 from 'md5';
 
-export const populateQuestions = async () => {
-
-  const questionsArray = await getData();
+export const populateQuestions = (questionsArray) => {
 
   const questionsContainer = document.querySelector('#questions-container');
   questionsContainer.innerHTML = '';
 
   questionsArray.forEach((question, index) => {
+
+    const questionHash = md5(question.question_id, question.question_createdAt);
+
     questionsContainer.innerHTML += `
-      <div class="card mb-4 question-card" data-hash="${md5(question.question_id, question.question_createdAt)}" id="c${index}">
+      <div class="card mb-4 question-card" data-hash="${questionHash}" id="q${index}">
         <div class="card-body">
           <h5 class="card-title">
             ${question.question_title}
-            <span class="icon-perf float-right" data-hash="${md5(question.question_id, question.question_createdAt)}">
-              <i class="far fa-star"></i>
+            <span class="icon-perf float-right" data-hash="${questionHash}">
+              <i class="${(isBookmarked(questionHash)) ? 'fas' : 'far'} fa-star"></i>
             </span>
           </h5>
           <p class="card-text">${question.question_body}</p>
@@ -27,9 +29,9 @@ export const populateQuestions = async () => {
   });
 
   document.querySelectorAll('.question-card .icon-perf').forEach((card) => {
-    card.addEventListener('click', (e) => {
-      bookmarkQuestion(e.target.parentElement.dataset.hash);
-    });
+    card.addEventListener('click', (e) => delegateClickEvent(e));
   });
+
+  displayBookmarked();
 
 }

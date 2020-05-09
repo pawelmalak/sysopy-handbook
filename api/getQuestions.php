@@ -3,7 +3,7 @@
   require_once('config/db.php');
 
   $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_BASE);
-  $query = "SELECT * FROM questions";
+  $query = "SELECT * FROM questions ORDER BY question_section ASC";
   $result = mysqli_query($conn, $query);
 
   $questionsArray = array();

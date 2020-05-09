@@ -1,5 +1,6 @@
 import marked from 'marked';
 
+import { getData } from './modules/getData';
 import { populateQuestions } from './modules/populateQuestions';
 
 // document.getElementById('content').innerHTML += marked("# Browser JavaScript");
@@ -7,4 +8,9 @@ import { populateQuestions } from './modules/populateQuestions';
 // document.getElementById('content').innerHTML += marked("setInterval(() => { document.querySelector('.start-study-form.form .el-button.button.full.el-button--primary.el-button--xl').click() }, 1000)");
 // document.getElementById('content').innerHTML += marked("```");
 
-populateQuestions();
+(async () => {
+
+  const questions = await getData();
+  populateQuestions(questions);
+  
+})();

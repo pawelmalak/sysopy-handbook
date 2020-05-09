@@ -17,28 +17,27 @@
     <div class="container">
       <div class="row pt-5">
         <div class="col-4">
-          <h4>Filtry</h4>
-          <div class="card" id="card-filters">
-            <div class="card-body">
-              <h5 class="card-title">Exclude from search</h5>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="411" id="exclude-check-411">
-                <label class="form-check-label" for="exclude-check-411">4.1.1</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="412" id="exclude-check-412">
-                <label class="form-check-label" for="exclude-check-412">4.1.2</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="414" id="exclude-check-414">
-                <label class="form-check-label" for="exclude-check-414">4.1.4</label>
+          <div class="sticky-top">
+            <h4>Filtry</h4>
+            <div class="card" id="card-filters">
+              <div class="card-body">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="411" id="exclude-check-411" checked>
+                  <label class="form-check-label" for="exclude-check-411">4.1.1</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="412" id="exclude-check-412" checked>
+                  <label class="form-check-label" for="exclude-check-412">4.1.2</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="414" id="exclude-check-414" checked>
+                  <label class="form-check-label" for="exclude-check-414">4.1.4</label>
+                </div>
               </div>
             </div>
-          </div>
-          <h4 class="mt-5">Zakładki</h4>
-          <div class="card">
-            <div class="card-body" id="bookmarked-questions-container" data-is_empty="1">
-              <p class="card-text text-muted text-center">Brak zakładek<br>Użyj `gwiazdki` aby zapisać pytanie</p>
+            <h4 class="mt-5">Zakładki</h4>
+            <div class="card">
+              <div class="card-body" id="bookmarked-questions-container" data-is_empty="1"></div>
             </div>
           </div>
         </div>
