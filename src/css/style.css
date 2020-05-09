@@ -1,0 +1,29 @@
+.icon-perf {
+  float: right;
+  font-size: 1rem;
+  color: gold;
+}
+
+.icon-perf:hover {
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  text-align: center;  
+}
+
+:-ms-input-placeholder {  
+  text-align: center; 
+}
+
+.search-input {
+  width: 75%;
+}

@@ -9,36 +9,15 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-      <a class="navbar-brand" href="#">v0.1.2</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto"></ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-        </form>
+      <div class="container d-flex">
+        <input class="form-control mx-auto search-input" type="text" name="" id="" placeholder="Szukaj pytania">
       </div>
     </nav>
 
     <div class="container">
       <div class="row pt-5">
         <div class="col-4">
-          <h4>Filters</h4>
+          <h4>Filtry</h4>
           <div class="card" id="card-filters">
             <div class="card-body">
               <h5 class="card-title">Exclude from search</h5>
@@ -56,16 +35,15 @@
               </div>
             </div>
           </div>
-          <h4 class="mt-5">Bookmarks</h4>
+          <h4 class="mt-5">Zakładki</h4>
           <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text text-muted">None</p>
+            <div class="card-body" id="bookmarked-questions-container" data-is_empty="1">
+              <p class="card-text text-muted text-center">Brak zakładek<br>Użyj `gwiazdki` aby zapisać pytanie</p>
             </div>
           </div>
         </div>
         <div class="col-8">
-          <h4>Questions</h4>
+          <h4>Pytania</h4>
           <div id="questions-container"></div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-const marked = require('marked');
+import marked from 'marked';
 
 import { populateQuestions } from './modules/populateQuestions';
 

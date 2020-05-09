@@ -1,21 +1,21 @@
 import { getData } from './getData';
+import { bookmarkQuestion } from './bookmarkQuestion';
+import md5 from 'md5';
 
 export const populateQuestions = async () => {
 
   const questionsArray = await getData();
 
-  console.log(questionsArray);
-
   const questionsContainer = document.querySelector('#questions-container');
   questionsContainer.innerHTML = '';
 
-  questionsArray.forEach((question) => {
+  questionsArray.forEach((question, index) => {
     questionsContainer.innerHTML += `
-      <div class="card mb-4">
+      <div class="card mb-4 question-card" data-hash="${md5(question.question_id, question.question_createdAt)}" id="c${index}">
         <div class="card-body">
-          <h5 class="card-title border">
+          <h5 class="card-title">
             ${question.question_title}
-            <span style="font-size: 1em; color: gold;">
+            <span class="icon-perf float-right" data-hash="${md5(question.question_id, question.question_createdAt)}">
               <i class="far fa-star"></i>
             </span>
           </h5>
@@ -24,6 +24,12 @@ export const populateQuestions = async () => {
         </div>
       </div>
     `;
+  });
+
+  document.querySelectorAll('.question-card .icon-perf').forEach((card) => {
+    card.addEventListener('click', (e) => {
+      bookmarkQuestion(e.target.parentElement.dataset.hash);
+    });
   });
 
 }
