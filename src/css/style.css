@@ -52,3 +52,7 @@ blockquote::before {
 pre {
   border-radius: 3px;
 }
+
+html {
+  scroll-behavior: smooth;
+}

@@ -1,7 +1,8 @@
 import md5 from 'md5';
 import { isBookmarked } from './isBookmarked';
+import { parseMarkdown } from './parseMarkdown';
 
-export const generateQuestionCard = (question, index) => {
+export const generateQuestionCard = (question, index = 0) => {
   const questionHash = md5(question.question_id, question.question_createdAt);
   const card = document.createElement('div');
   card.className = 'card mb-4 question-card';
@@ -15,7 +16,7 @@ export const generateQuestionCard = (question, index) => {
           <i class="${(isBookmarked(questionHash)) ? 'fas' : 'far'} fa-star"></i>
         </span>
       </h5>
-      <p class="card-text">${question.parsedBody}</p>
+      <p class="card-text">${parseMarkdown(question.question_body)}</p>
       <h5><span class="badge badge-${determineBadge(question.group_id)}">${question.group_teacher}</span></h5>
     </div>
   `;
