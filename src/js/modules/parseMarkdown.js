@@ -6,7 +6,8 @@ export const parseMarkdown = (sourceString) => {
     omitExtraWLInCodeBlocks: true,
     headerLevelStart: 3,
     smartIndentationFix: true,
-    simpleLineBreaks: true
+    simpleLineBreaks: true,
+    strikethrough: true
   });
 
   const markdownInput = JSON.parse(sourceString);

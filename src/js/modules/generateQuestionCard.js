@@ -17,7 +17,10 @@ export const generateQuestionCard = (question, index = 0) => {
         </span>
       </h5>
       <p class="card-text">${parseMarkdown(question.question_body)}</p>
-      <h5><span class="badge badge-${determineBadge(question.group_id)}">${question.group_teacher}</span></h5>
+      <h5>
+        <span class="badge badge-${determineBadge(question.group_id)}">${question.group_teacher}</span>
+        <span class="badge badge-secondary">${parseChapterNumber(question.question_chapter)}</span>
+      </h5>
     </div>
   `;
 
@@ -39,4 +42,8 @@ const determineBadge = (groupId) => {
     default:
       return 'secondary';
   }
-}
+};
+
+const parseChapterNumber = (chapterId) => {
+  return chapterId.split('').map(x => x += '.').join().replace(/(,|.$)/g,'');
+};

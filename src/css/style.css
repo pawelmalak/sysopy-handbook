@@ -28,31 +28,15 @@ nav :-ms-input-placeholder {
   width: 75%;
 }
 
-#questions-container h1,
-#questions-container h2 {
-  font-size: 2rem;
-}
-
-blockquote {
-  color: grey;
-  padding-left: 1rem;
-  position: relative;
-}
-
-blockquote::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 5px;
-  height: 100%;
-  background: gray;
-}
-
-pre {
-  border-radius: 3px;
-}
-
 html {
   scroll-behavior: smooth;
+}
+
+.slideAlert-container {
+  position: absolute;
+  bottom: 80px;
+  width: 300px;
+  margin: 0;
+  z-index: 100;
+  right: -350px;
 }

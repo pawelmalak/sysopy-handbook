@@ -10,7 +10,7 @@
     questions.question_id,
     questions.question_title,
     questions.question_body,
-    questions.question_section,
+    questions.question_chapter,
     questions.question_group,
     questions.question_createdAt,
     groups.group_teacher,
@@ -18,7 +18,7 @@
     FROM questions
     INNER JOIN groups
     ON questions.question_group = groups.group_id
-    ORDER BY question_section ASC";
+    ORDER BY question_chapter ASC";
   $result = mysqli_query($conn, $query);
 
   $questionsArray = array();

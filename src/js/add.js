@@ -13,6 +13,7 @@ const DOM = {
   inputTitle: document.querySelector('#input-title'),
   inputBody: document.querySelector('#input-body'),
   selectGroup: document.querySelector('#select-group'),
+  selectChapter: document.querySelector('#select-chapter'),
   outputContainer: document.querySelector('#dest')
 };
 
@@ -24,6 +25,7 @@ const dummyQuestion = {
   question_title: 'Proszę wykazać, że ...',
   question_createdAt: '0',
   question_group: '0',
+  question_chapter: '0.0.0',
   group_teacher: 'dr inż. XYZ'
 };
 
@@ -48,9 +50,10 @@ DOM.selectGroup.addEventListener('input', () => {
 });
 
 DOM.sendBtn.addEventListener('click', async () => addData({
-  titleIn: document.querySelector('#input-title').value,
-  bodyIn: document.querySelector('#input-body').value,
-  groupIn: document.querySelector('#select-group').value
+  titleIn: DOM.inputTitle.value,
+  bodyIn: DOM.inputBody.value,
+  chapterIn: DOM.selectChapter.value,
+  groupIn: DOM.selectGroup.value
 }));
 
 const processEvent = () => {

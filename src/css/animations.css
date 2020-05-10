@@ -1,0 +1,19 @@
+.slideInAndOut {
+  animation-name: slideInAndOut;
+  animation-duration: 3s;
+}
+
+@keyframes slideInAndOut {
+  0% {
+    right: -350px
+  }
+  10% {
+    right: 50px;
+  }
+  90% {
+    right: 50px;
+  }
+  100% {
+    right: -350px;
+  }
+}
