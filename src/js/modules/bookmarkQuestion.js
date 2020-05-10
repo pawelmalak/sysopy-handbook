@@ -3,7 +3,7 @@ import { displayBookmarked } from './displayBookmarked';
 
 export const bookmarkQuestion = (questionHash) => {
 
-  if (isBookmarked(questionHash)) {
+  if (!localStorage.getItem('bookmarkedQuestions')) {
     localStorage.setItem('bookmarkedQuestions', JSON.stringify({
       hashes: [questionHash]
     }));
@@ -12,7 +12,8 @@ export const bookmarkQuestion = (questionHash) => {
     const bookmarkedQuestions = JSON.parse(localStorage.getItem('bookmarkedQuestions'));
     bookmarkedQuestions.hashes.push(questionHash);
     localStorage.setItem('bookmarkedQuestions', JSON.stringify(bookmarkedQuestions));
-    displayBookmarked(questionHash);
   }
+
+  displayBookmarked(questionHash);
 
 }

@@ -6,7 +6,7 @@
   "scripts": {
     "dev-webpack": "webpack --mode development --config ./webpack.config.js --watch",
     "dev-gulp": "gulp dev",
-    "build": "webpack --mode production --config ./webpack.config.js & gulp"
+    "build": "webpack --mode production --config ./webpack.config.js & gulp & cd api & composer i"
   },
   "keywords": [],
   "author": "",
@@ -18,7 +18,9 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "highlight.js": "^10.0.2",
     "md5": "^2.2.1",
-    "showdown": "^1.9.1"
+    "showdown": "^1.9.1",
+    "smooth-scroll": "^16.1.3"
   }
 }

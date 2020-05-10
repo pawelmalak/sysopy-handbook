@@ -1,6 +1,10 @@
-import { isBookmarked } from './isBookmarked';
+import hljs from 'highlight.js/lib/core';
+import bash from 'highlight.js/lib/languages/bash';
+import SmoothScroll from 'smooth-scroll';
 import { delegateClickEvent } from './delegateClickEvent';
-import md5 from 'md5';
+import { generateQuestionCard } from './generateQuestionCard';
+
+hljs.registerLanguage('bash', bash);
 
 export const populateQuestions = (questionsArray) => {
 
@@ -12,25 +16,10 @@ export const populateQuestions = (questionsArray) => {
     return;
   }
 
-  questionsArray.forEach((question, index) => {
+  questionsArray.forEach((question, index) => questionsContainer.innerHTML += generateQuestionCard(question, index));
+  document.querySelectorAll('pre code').forEach((block) => hljs.highlightBlock(block));
 
-    const questionHash = md5(question.question_id, question.question_createdAt);
-
-    questionsContainer.innerHTML += `
-      <div class="card mb-4 question-card" data-hash="${questionHash}" id="q${index}">
-        <div class="card-body">
-          <h5 class="card-title">
-            ${question.question_title}
-            <span class="icon-perf float-right" data-hash="${questionHash}">
-              <i class="${(isBookmarked(questionHash)) ? 'fas' : 'far'} fa-star"></i>
-            </span>
-          </h5>
-          <p class="card-text">${question.question_body}</p>
-          <h5><span class="badge badge-success">${question.question_group}</span></h5>
-        </div>
-      </div>
-    `;
-  });
+  const scroll = new SmoothScroll('a[href*="#"]');
 
   document.querySelectorAll('.question-card .icon-perf').forEach((card) => {
     card.addEventListener('click', (e) => delegateClickEvent(e));

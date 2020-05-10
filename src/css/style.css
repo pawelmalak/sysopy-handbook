@@ -8,22 +8,47 @@
   cursor: pointer;
 }
 
-::-webkit-input-placeholder {
+nav ::-webkit-input-placeholder {
   text-align: center;
 }
 
-:-moz-placeholder { /* Firefox 18- */
+nav :-moz-placeholder { /* Firefox 18- */
   text-align: center;  
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
+nav ::-moz-placeholder {  /* Firefox 19+ */
   text-align: center;  
 }
 
-:-ms-input-placeholder {  
+nav :-ms-input-placeholder {  
   text-align: center; 
 }
 
 .search-input {
   width: 75%;
+}
+
+#questions-container h1,
+#questions-container h2 {
+  font-size: 2rem;
+}
+
+blockquote {
+  color: grey;
+  padding-left: 1rem;
+  position: relative;
+}
+
+blockquote::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background: gray;
+}
+
+pre {
+  border-radius: 3px;
 }
