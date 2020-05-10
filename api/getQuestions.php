@@ -29,7 +29,6 @@
     array_push($questionsArray, $row);
   }
 
-  header("Content-Type: application/json");
   echo json_encode($questionsArray);
 
 ?>

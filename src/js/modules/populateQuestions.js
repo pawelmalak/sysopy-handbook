@@ -7,7 +7,7 @@ import { generateQuestionCard } from './generateQuestionCard';
 hljs.registerLanguage('bash', bash);
 
 export const populateQuestions = (questionsArray) => {
-
+  console.log(questionsArray);
   const questionsContainer = document.querySelector('#questions-container');
   questionsContainer.innerHTML = '';
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add </title>
+  <title>Dodaj pytanie | Sysopy Handbook</title>
   <link rel="stylesheet" href="../dist/bundle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
@@ -11,54 +11,58 @@
 
   <div class="container-fluid px-5">
     <div class="row px-2 pt-3">
+
+      <!-- 'navbar' -->
       <div class="col-12 d-flex mb-4">
-        <a href="../index.html">&lt; powrót</a>
-        
+        <a href="../index.html" class="text-info">&lt; powrót</a>
       </div>
 
-<!-- markdown ref -->
-<div class="col-2">
-  <h4 class="mb-4"><u>Składnia Markdown</u></h4>
-  <h5>Blok kodu</h5>
-    <pre><code class="language-markdown hljs">```bash<br> kod</br>```</code></pre>
-  <h5>Linijka kodu</h5>
-    <pre><code class="language-markdown hljs">`kod`</code></pre>
-  <h5>Lista</h5>
-    <pre><code class="language-markdown hljs">- element 1<br>- element 2<br>- element 3<br></code></pre>
-  <h5>Formatowanie</h5>
-    <pre><code class="language-markdown hljs">**pogrubienie**<br>&lt;mark>wyróżnienie&lt;/mark></code></pre>
-  <h5>Wcięcie tekstu</h5>
-    <pre><code class="language-markdown hljs">> jeden poziom<br>>> dwa poziomy</code></pre>
-  <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" class="btn btn-outline-info mt-3" style="width: 100%;" target="blank">Pełna dokumentacja</a>
-</div>
+      <!-- markdown ref -->
+      <div class="col-2">
+        <h4 class="mb-4"><u>Składnia Markdown</u></h4>
+        <h5>Blok kodu</h5>
+          <pre><code class="language-markdown hljs">```bash<br> kod</br>```</code></pre>
+        <h5>Linijka kodu</h5>
+          <pre><code class="language-markdown hljs">`kod`</code></pre>
+        <h5>Lista</h5>
+          <pre><code class="language-markdown hljs">- element 1<br>- element 2<br>- element 3<br></code></pre>
+        <h5>Formatowanie</h5>
+          <pre><code class="language-markdown hljs">**pogrubienie**<br>&lt;mark>wyróżnienie&lt;/mark></code></pre>
+        <h5>Wcięcie tekstu</h5>
+          <pre><code class="language-markdown hljs">> jeden poziom<br>>> dwa poziomy</code></pre>
+        <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" class="btn btn-outline-info mt-3" style="width: 100%;" target="blank">Pełna dokumentacja</a>
+      </div>
 
-<!-- edytor -->
-<div class="col-5">
-  <h4 class="mb-4"><u>Edytor</u></h4>
+      <!-- edytor -->
+      <div class="col-5">
+        <h4 class="mb-4"><u>Edytor</u></h4>
 
-  <label for="exampleInputEmail1">Tytuł pytania</label>
-        <input type="email" class="form-control border mb-3" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Proszę wykazać, że ...">
-        <label for="exampleInputEmail1">Odpowiedź</label>
-  <textarea id="source" cols="60" rows="25" class="form-control border mb-3"></textarea>
-  <label for="exampleInputEmail1">Prowadzący</label>
-  <select id="inputState" class="form-control border">
-    <option selected>Choose...</option>
-    <option>...</option>
-  </select>
-  <button class="btn btn-primary" id="sendit">send it</button>
-</div>
+        <label for="input-title">Tytuł pytania</label>
+        <input type="text" class="form-control border mb-3" id="input-title" placeholder="Proszę wykazać, że ...">
 
+        <label for="input-body">Odpowiedź</label>
+        <textarea id="input-body" cols="60" rows="25" class="form-control border mb-3"></textarea>
 
-
-      
+        <label for="select-group">Prowadzący</label>
+        <div class="row">
+          <div class="col-9">
+            <select id="select-group" class="form-control border"></select>
+          </div>
+          <div class="col-3">
+            <button class="btn btn-primary" style="width: 100%" id="sendit">Dodaj</button>
+          </div>
+        </div>
+      </div>
 
       <!-- podgląd -->
       <div class="col-5">
         <h4 class="mb-4"><u>Podgląd</u></h4>
         <div id="dest"></div>
       </div>
+
     </div>
   </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
   <script src="../dist/subBundle.js"></script>
 
