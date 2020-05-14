@@ -26,6 +26,7 @@ const dummyQuestion = {
   question_createdAt: '0',
   question_group: '0',
   question_chapter: '0.0.0',
+  question_createdAt: '2020-05-01 12:00:00',
   group_teacher: 'dr inż. XYZ'
 };
 

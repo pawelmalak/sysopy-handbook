@@ -62,7 +62,6 @@ export const searchQuestion = (questionsArray) => {
       searchResults = combinedFieldsArray.filter(({ combined }) => regexPattern.test(combined));
     }
     
-    console.log(searchResults);
     populateQuestions(searchResults);
 
   });

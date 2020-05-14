@@ -1,7 +1,8 @@
 <?php
 
-  header("Access-Control-Allow-Origin: http://localhost:5500");
-  header("Access-Control-Allow-Origin: http://127.0.0.1:5500");
+  header('Access-Control-Allow-Origin: *');
+  header('Access-Control-Allow-Methods: GET, POST');
+  header("Access-Control-Allow-Headers: X-Requested-With");
   header("Content-Type: application/json");
   
 ?>

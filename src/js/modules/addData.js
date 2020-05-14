@@ -1,8 +1,9 @@
 import { alertSlide } from './alertSlide';
+import { apiPath } from '../config';
 
 export const addData = async ({ titleIn, bodyIn, chapterIn, groupIn }) => {
 
-  const request = await fetch(`http://localhost/sysopy-handbook/api/addQuestion.php`, {
+  const request = await fetch(`${apiPath}/addQuestion.php`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

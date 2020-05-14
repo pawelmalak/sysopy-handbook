@@ -40,3 +40,7 @@ html {
   z-index: 100;
   right: -350px;
 }
+
+#card-filters label:hover {
+  cursor: pointer;
+}

@@ -16,6 +16,7 @@ export const generateQuestionCard = (question, index = 0) => {
           <i class="${(isBookmarked(questionHash)) ? 'fas' : 'far'} fa-star"></i>
         </span>
       </h5>
+      <h6 class="card-subtitle mb-2 text-muted">${question.question_createdAt}</h6>
       <p class="card-text">${parseMarkdown(question.question_body)}</p>
       <h5>
         <span class="badge badge-${determineBadge(question.group_id)}">${question.group_teacher}</span>

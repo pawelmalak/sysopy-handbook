@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166251949-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-166251949-1');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
@@ -13,12 +21,12 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <div class="container d-flex">
       <input class="form-control mx-auto search-input text-center" type="text" name="" id="search-input" placeholder="Szukaj pytania">
-      <a href="pages/add.html" type="button" class="btn btn-outline-success">Dodaj pytanie</a>
+      <a href="pages/editor.html" type="button" class="btn btn-outline-success">Dodaj pytanie</a>
     </div>
   </nav>
 
   <div class="container">
-    <div class="row pt-5">
+    <div class="row pt-4">
       <div class="col-12 col-md-4">
         <div class="sticky-top">
 
@@ -62,8 +70,14 @@
             </div>
           </div>
 
+          <!-- stats -->
+          <h4 class="mt-4">Statystyki</h4>
+          <div class="card">
+            <div class="card-body" id="questions-stats-container"></div>
+          </div>
+
           <!-- bookmarks -->
-          <h4 class="mt-5">Zakładki</h4>
+          <h4 class="mt-4">Zakładki</h4>
           <div class="card">
             <div class="card-body" id="bookmarked-questions-container"></div>
           </div>
