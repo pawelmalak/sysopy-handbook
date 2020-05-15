@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+html(lang="pl")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="robots" content="noindex")
+    link(rel="stylesheet", href="/dist/bundle.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css")
+    title Dodaj pytanie | Sysopy Handbook
+  body(style="overflow-x: hidden;")
+
+    //- main container
+    div(class="container-fluid px-5")
+      div(class="row px-2 pt-3")
+
+        //- 'navbar'
+        div(class="col-12 d-flex mb-4")
+          a(href="/" class="text-info") &lt; powrót
+        
+        //- markdown reference
+        div(class="col-2")
+          h4(class="mb-4")
+            u Składnia Markdown
+          h5 Blok kodu
+            pre
+              code(class="language-markdown hljs") ```bash<br> kod</br>```
+          h5 Linijka kodu
+            pre
+              code(class="language-markdown hljs") `kod`
+          h5 Lista
+            pre
+              code(class="language-markdown hljs") - element 1<br>- element 2<br>- element 3
+          h5 Formatowanie
+            pre
+              code(class="language-markdown hljs") **pogrubienie**<br>_kursywa_<br>~~przekreślenie~~<br>&lt;mark>wyróżnienie&lt;/mark>
+          h5 Wcięcie tekstu
+            pre
+              code(class="language-markdown hljs") > jeden poziom<br>>> dwa poziomy
+          a(href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" class="btn btn-outline-info mt-3" style="width: 100%;" target="blank") Pełna dokumentacja
+
+        //- editor
+        div(class="col-5")
+          h4(class="mb-4")
+            u Edytor
+
+          label(for="input-title") Tytuł pytania
+          input(type="text" class="form-control border mb-3" id="input-title" placeholder="Proszę wykazać, że ...")
+
+          label(for="input-body") Odpowiedź
+          textarea(id="input-body" cols="60" rows="25" class="form-control border mb-3")
+
+          div(class="row")
+            div(class="col-4")
+              label(for="select-group") Prowadzący
+              select(id="select-group" class="form-control border")
+            div(class="col-4")
+              label(for="select-chapter") Rozdział
+              select(id="select-chapter" class="form-control border")
+                option(value="411") 4.1.1
+                option(value="412") 4.1.2
+                option(value="414") 4.1.4
+            div(class="col-4")
+              label(for="") &nbsp;
+              button(class="btn btn-primary" style="width: 100%" id="sendit") Dodaj
+
+        //- preview
+        div(class="col-5")
+          h4(class="mb-4")
+            u Podgląd
+          div(id="dest")
+        
+    script(src="/dist/subbundle.js")

@@ -18,7 +18,7 @@ export const searchQuestion = (questionsArray) => {
       
       // push all id's to be included in search
       for (let i = 0; i < Object.keys(chapters).length; i++) {
-        if (Object.values(chapters)[i]) toBeIncluded.push(Object.keys(chapters)[i]);
+        if (Object.values(chapters)[i]) toBeIncluded.push(parseInt(Object.keys(chapters)[i]));
       }
 
       if (toBeIncluded.length != 0) {
@@ -35,7 +35,7 @@ export const searchQuestion = (questionsArray) => {
       
       // push all id's to be included in search
       for (let i = 0; i < Object.keys(groups).length; i++) {
-        if (Object.values(groups)[i]) toBeIncluded.push(Object.keys(groups)[i]);
+        if (Object.values(groups)[i]) toBeIncluded.push(parseInt(Object.keys(groups)[i]));
       }
 
       if (searchResults.length == 0 && toBeIncluded.length != 0) {

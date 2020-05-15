@@ -46,5 +46,5 @@ const determineBadge = (groupId) => {
 };
 
 const parseChapterNumber = (chapterId) => {
-  return chapterId.split('').map(x => x += '.').join().replace(/(,|.$)/g,'');
+  return chapterId.toString().split('').map(x => x += '.').join().replace(/(,|.$)/g,'');
 };

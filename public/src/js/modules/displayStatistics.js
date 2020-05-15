@@ -9,7 +9,7 @@ dayjs.extend(relativeTime);
 export const displayStatistics = async () => {
   
   const container = document.querySelector('#questions-stats-container');
-  let data = await getData('Statistics');
+  let data = await getData('statistics');
   data = data[0];
 
   container.innerHTML = `

@@ -31,7 +31,7 @@ const dummyQuestion = {
 };
 
 (async () => {
-  const groups = await getData('Groups');
+  const groups = await getData('groups');
   groups.forEach(({ group_id, group_teacher }) => {
     document.querySelector('#select-group').innerHTML += `<option value="${group_id}">${group_teacher}</option>`;
   });
