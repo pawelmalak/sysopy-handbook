@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import md5 from 'md5';
 import { isBookmarked } from './isBookmarked';
 import { parseMarkdown } from './parseMarkdown';
@@ -16,7 +17,7 @@ export const generateQuestionCard = (question, index = 0) => {
           <i class="${(isBookmarked(questionHash)) ? 'fas' : 'far'} fa-star"></i>
         </span>
       </h5>
-      <h6 class="card-subtitle mb-2 text-muted">${question.question_createdAt}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">${dayjs(question.question_createdAt).format('DD/MM/YYYY HH:mm')}</h6>
       <p class="card-text">${parseMarkdown(question.question_body)}</p>
       <h5>
         <span class="badge badge-${determineBadge(question.group_id)}">${question.group_teacher}</span>
