@@ -12,7 +12,7 @@ const addConfig = {
   entry: path.resolve(__dirname, 'src/js/add.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'subBundle.js'
+    filename: 'subbundle.js'
   }
 };
 
