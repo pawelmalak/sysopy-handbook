@@ -30,9 +30,9 @@ const addData = async (mode, { titleIn, bodyIn, chapterIn, groupIn }) => {
         VALUES
           (
             '${titleIn}',
-            ${bodyIn},
-            ${chapterIn},
-            ${groupIn}
+             ${bodyIn},
+             ${chapterIn},
+             ${groupIn}
           )
       `);
     }

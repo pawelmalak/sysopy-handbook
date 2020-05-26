@@ -5,11 +5,15 @@ const getData = require('./modules/getData');
 const addData = require('./modules/addData');
 
 router.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', {
+    title: 'Sysopy Handbook'
+  });
 });
 
 router.get('/editor', (req, res) => {
-  res.render('editor');
+  res.render('editor', {
+    title: 'Dodaj pytanie | Sysopy Handbook'
+  });
 });
 
 router.get('/question/get', async (req, res) => {
@@ -17,7 +21,6 @@ router.get('/question/get', async (req, res) => {
 });
 
 router.post('/question/add', async (req, res) => {
-  console.log(req.body);
   res.json(await addData('question', req.body));
 });
 

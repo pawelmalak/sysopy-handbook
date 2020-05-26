@@ -9,10 +9,11 @@ const getData = async (mode, params = {}) => {
     password: process.env.DB_PASS,
     database: process.env.DB_NAME
   };
-
+  console.log(config);
   try {
 
     connection = await mysql.createConnection(config);
+    console.log(connection);
     let result;
 
     if (mode == 'questions') result = await connection.query(`
@@ -44,7 +45,7 @@ const getData = async (mode, params = {}) => {
         group_teacher
       FROM groups
     `);
-
+    console.log(result);
     return result;
 
   }
