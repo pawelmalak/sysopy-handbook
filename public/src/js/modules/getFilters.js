@@ -7,7 +7,8 @@ export const getFilters = (property) => {
     return {
       411: document.querySelector('#exclude-check-411').checked,
       412: document.querySelector('#exclude-check-412').checked,
-      414: document.querySelector('#exclude-check-414').checked
+      414: document.querySelector('#exclude-check-414').checked,
+      500: document.querySelector('#exclude-check-500').checked
     }
   }
   else if (property == 'groups') {
